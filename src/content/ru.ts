@@ -265,4 +265,15 @@ export const ru: Content = {
     source: 'Код на GitHub',
     updated: 'Обновлено в октябре 2026',
   },
+  resume: {
+    title: 'Дмитрий Яманко, резюме',
+    summary: 'О себе',
+    skills: 'Ключевые навыки',
+    experience: 'Опыт работы',
+    achievements: 'Что сделал в портале',
+    education: 'Образование',
+    languages: 'Языки',
+    additional: 'Формат работы',
+    website: 'Сайт',
+  },
 }

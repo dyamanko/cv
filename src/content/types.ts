@@ -143,4 +143,15 @@ export interface Content {
     resumeEn: string
   }
   footer: { built: string; source: string; updated: string }
+  resume: {
+    title: string
+    summary: string
+    skills: string
+    experience: string
+    achievements: string
+    education: string
+    languages: string
+    additional: string
+    website: string
+  }
 }

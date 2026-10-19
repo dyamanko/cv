@@ -265,4 +265,15 @@ export const en: Content = {
     source: 'Source on GitHub',
     updated: 'Updated October 2026',
   },
+  resume: {
+    title: 'Dmitrii Iamanko, resume',
+    summary: 'Summary',
+    skills: 'Key skills',
+    experience: 'Work experience',
+    achievements: 'What I built in the portal',
+    education: 'Education',
+    languages: 'Languages',
+    additional: 'Work terms',
+    website: 'Website',
+  },
 }
