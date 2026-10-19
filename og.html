@@ -1,0 +1,87 @@
+<!doctype html>
+<!--
+  Source of public/og.png, the link preview. Not part of the build:
+  open it on the dev server and run `npm run og`.
+-->
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <title>og</title>
+    <script type="module">
+      import '@fontsource-variable/unbounded'
+      import '@fontsource-variable/golos-text'
+      import '/src/styles/tokens.css'
+      document.documentElement.dataset.theme = 'light'
+    </script>
+    <style>
+      html,
+      body {
+        margin: 0;
+        width: 1200px;
+        height: 630px;
+        overflow: hidden;
+      }
+
+      body {
+        display: grid;
+        grid-template-rows: 1fr auto;
+        box-sizing: border-box;
+        padding: 72px 80px 64px;
+        background-color: #ffffff;
+        background-image: radial-gradient(#c9d2df 1.4px, transparent 1.6px);
+        background-size: 28px 28px;
+        color: #1a2540;
+        font-family: 'Golos Text Variable', sans-serif;
+      }
+
+      h1 {
+        margin: 0;
+        font-family: 'Unbounded Variable', sans-serif;
+        font-size: 104px;
+        font-weight: 600;
+        line-height: 0.95;
+        letter-spacing: -0.035em;
+      }
+
+      p {
+        margin: 0;
+      }
+
+      .latin {
+        margin-top: 18px;
+        font-size: 30px;
+        font-weight: 560;
+        color: #48546d;
+      }
+
+      .role {
+        margin-top: 28px;
+        font-size: 38px;
+        font-weight: 640;
+      }
+
+      svg {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <h1>Дмитрий<br />Яманко</h1>
+      <p class="latin">Dmitrii Iamanko</p>
+      <p class="role">Senior Java Backend Developer</p>
+    </div>
+
+    <svg width="1040" height="64" viewBox="0 0 1040 64" aria-hidden="true">
+      <path d="M24 32H996" stroke="#c3f07a" stroke-width="22" stroke-linecap="round" />
+      <g fill="none" stroke="#1a2540" stroke-width="2.4">
+        <path d="M46 32H168M352 32H448M520 32H616M800 32H974" />
+      </g>
+      <circle cx="24" cy="32" r="20" fill="#e2f6c0" stroke="#1a2540" stroke-width="2.4" />
+      <rect x="170" y="4" width="180" height="56" rx="12" fill="#e2f6c0" stroke="#1a2540" stroke-width="2.4" />
+      <path d="M484 4l32 28-32 28-32-28Z" fill="#e2f6c0" stroke="#1a2540" stroke-width="2.4" />
+      <rect x="618" y="4" width="180" height="56" rx="12" fill="#e2f6c0" stroke="#1a2540" stroke-width="2.4" />
+      <circle cx="996" cy="32" r="20" fill="#e2f6c0" stroke="#1a2540" stroke-width="6" />
+    </svg>
+  </body>
+</html>
