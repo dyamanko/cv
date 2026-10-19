@@ -154,11 +154,11 @@ const degrees = computed(() => t.value.experience.degrees.map((d) => ({ ...d, po
   background: var(--ink);
 }
 
+/* "now" is always near the right edge, so the label hangs to the left of the line */
 .now-label {
   position: absolute;
   bottom: calc(100% + 6px);
-  left: 50%;
-  transform: translateX(-50%);
+  right: -1px;
   padding: 1px 8px;
   border-radius: 999px;
   background: var(--ink);

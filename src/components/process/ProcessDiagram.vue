@@ -168,7 +168,7 @@ onMounted(() => {
       visibility?.disconnect()
       build(0)
     },
-    { threshold: 0.6 },
+    { threshold: 0.4 },
   )
   visibility.observe(canvas.value ?? root.value)
 })

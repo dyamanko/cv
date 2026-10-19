@@ -89,7 +89,9 @@ const pct = (h: number) => `${(h / MAX) * 100}%`
 
     <p class="note">{{ t.cases.chart.note }}</p>
 
-    <table class="visually-hidden">
+    <!-- tables ignore width: 1px, so the wrapper does the hiding -->
+    <div class="visually-hidden">
+      <table>
       <caption>{{ t.cases.chart.tableCaption }}</caption>
       <thead>
         <tr>
@@ -107,12 +109,14 @@ const pct = (h: number) => `${(h / MAX) * 100}%`
           <td>{{ t.cases.chart.automatedValue }}: {{ t.cases.chart.generation }}, {{ t.cases.chart.refinement }}</td>
         </tr>
       </tbody>
-    </table>
+      </table>
+    </div>
   </figure>
 </template>
 
 <style scoped>
 .chart {
+  position: relative;
   display: grid;
   gap: 14px;
   container-type: inline-size;
