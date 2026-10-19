@@ -3,6 +3,7 @@ import CasesSection from './components/cases/CasesSection.vue'
 import ExperienceSection from './components/experience/ExperienceSection.vue'
 import HeroSection from './components/HeroSection.vue'
 import SiteHeader from './components/SiteHeader.vue'
+import StackSection from './components/StackSection.vue'
 </script>
 
 <template>
@@ -11,5 +12,6 @@ import SiteHeader from './components/SiteHeader.vue'
     <HeroSection />
     <CasesSection />
     <ExperienceSection />
+    <StackSection />
   </main>
 </template>

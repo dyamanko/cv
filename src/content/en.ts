@@ -194,6 +194,7 @@ export const en: Content = {
       { name: 'Data', items: ['PostgreSQL', 'Liquibase', 'Redis', 'ShedLock'] },
       { name: 'Build and delivery', items: ['Docker', 'TeamCity', 'GitLab CI', 'Nexus', 'Maven', 'Gradle'] },
     ],
+    acrossTitle: 'Across all layers',
     across: [
       { name: 'Testing', items: ['JUnit', 'Mockito', 'Spring Boot Test'] },
       { name: 'AI and LLM', items: ['Dify', 'Python', 'Prompt engineering', 'Claude Code'] },
@@ -217,6 +218,7 @@ export const en: Content = {
         { name: 'London', tz: 'Europe/London' },
       ],
       self: 'Tbilisi, my day',
+      shared: 'shared hours',
       overlap: '{h} h shared',
       nowIn: 'It is {time} in Tbilisi now',
     },

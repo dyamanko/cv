@@ -111,7 +111,7 @@ export interface Content {
     jobs: Job[]
     degrees: { year: number; label: string }[]
   }
-  stack: { title: string; lead: string; layers: StackLayer[]; across: StackLayer[] }
+  stack: { title: string; lead: string; layers: StackLayer[]; acrossTitle: string; across: StackLayer[] }
   format: {
     title: string
     terms: Fact[]
@@ -120,6 +120,7 @@ export interface Content {
       note: string
       cities: { name: string; tz: string }[]
       self: string
+      shared: string
       overlap: string
       nowIn: string
     }
