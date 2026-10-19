@@ -1,0 +1,253 @@
+import type { Content } from './types'
+
+export const ru: Content = {
+  meta: {
+    title: 'Дмитрий Яманко, Senior Java Backend Developer',
+    description:
+      'Java-бэкенд на Spring Boot и Camunda. 6+ лет в коммерческой разработке, три года на портале Service Desk крупного банка. Ищу удалённую работу.',
+  },
+  nav: {
+    label: 'Разделы',
+    cases: 'Проекты',
+    experience: 'Опыт',
+    stack: 'Стек',
+    format: 'Формат',
+    contacts: 'Контакты',
+  },
+  langSwitch: 'Язык сайта',
+  hero: {
+    name: ['Дмитрий', 'Яманко'],
+    role: 'Senior Java Backend Developer',
+    pitch:
+      'Пишу бэкенд для бизнес-процессов на Java, Spring Boot и Camunda. Три года развиваю портал Service Desk крупного банка, с которым работают все его сотрудники. Веду задачи от постановки до релиза, на бэкенде и на фронте.',
+    status: 'Ищу удалённую работу, полная занятость',
+    location: 'Тбилиси, UTC+4',
+    telegram: 'Написать в Telegram',
+    resume: 'Резюме в PDF',
+  },
+  process: {
+    label: 'Схема BPMN: путь заявки в портале от создания до выполнения',
+    caption:
+      'Так заявка проходит процесс в портале. Подсветку пройденного пути и автоповтор упавших задач сделал я.',
+    replay: 'Запустить заново',
+    start: 'Заявка создана',
+    approval: 'Согласование',
+    gateway: 'Согласовано?',
+    yes: 'да',
+    no: 'нет',
+    rejected: 'Отклонена',
+    service: 'Вызов внешней системы',
+    fulfil: 'Исполнение',
+    end: 'Выполнена',
+    incident: 'Инцидент: таймаут',
+    retry: 'Автоповтор, попытка 2',
+    resolved: 'Повтор прошёл',
+    steps: [
+      {
+        title: 'Согласование',
+        text: 'Несколько согласующих работают параллельно: multi-instance, таймеры и listeners в Camunda 7.',
+      },
+      {
+        title: 'Маршрут',
+        text: 'Условия переходов и скрипты в процессах пишу на JUEL и Groovy.',
+      },
+      {
+        title: 'Внешняя система',
+        text: 'Если вызов падает, подсистема инцидентов повторяет его по шаблону ошибки и не даёт уйти в цикл.',
+      },
+      {
+        title: 'Исполнение',
+        text: 'Исполнитель работает в форме из конструктора динамических форм на Vue.',
+      },
+    ],
+  },
+  cases: {
+    title: 'Что я сделал в портале',
+    intro:
+      'Service Desk банка: каталог услуг, заявки с согласованием и исполнением через BPM-процессы, инциденты, отчёты. В команде больше 20 человек, из них 5+ разработчиков.',
+    items: [
+      {
+        id: 'editor',
+        title: 'BPMN-редактор внутри портала',
+        text: 'Спроектировал и сделал редактор процессов на bpmn-js и Camunda 7, от постановки до продакшена, на фронте и на бэке. В нём смотрят и правят схемы и видят ход выполнения заявки. Доступ зависит от роли, у каждой схемы есть история версий и публикаций.',
+        tags: ['bpmn-js', 'Camunda 7', 'Vue 2', 'Spring Boot'],
+      },
+      {
+        id: 'incidents',
+        title: 'Автоповтор упавших задач',
+        text: 'Построил подсистему инцидентов Camunda. Упавшие задачи попадают в очередь в БД, планировщик на ShedLock повторяет их по шаблонам ошибок, а защита от зацикливания останавливает бесконечные повторы. Администраторы видят историю инцидентов и инструкции по разбору.',
+        tags: ['Camunda 7', 'ShedLock', 'PostgreSQL'],
+      },
+      {
+        id: 'pipeline',
+        title: 'Процесс по описанию услуги за пару часов',
+        text: 'Собрал на Dify пайплайн, который читает документ с описанием услуги и строит BPMN для Camunda 7. Схему проверяют статический анализатор и LLM-аудит, на выходе получается отчёт для ревью. Второй пайплайн переносит описания полей форм из Confluence в XML-формы портала.',
+        tags: ['Dify', 'Python', 'Prompt engineering', 'Camunda 7'],
+      },
+      {
+        id: 'integrations',
+        title: 'Интеграции и скорость',
+        text: 'Уведомления через Kafka и push. API курьерской службы: расчёт стоимости, трекинг и статусы по расписанию. REST-интеграции с low-code Idea Platform. Кеш в Redis и поиск заявок на нативном SQL с индексами. Сборка и доставка через TeamCity, GitLab CI и Nexus.',
+        tags: ['Kafka', 'Redis', 'PostgreSQL', 'REST'],
+      },
+    ],
+    editor: {
+      versions: 'Версии',
+      published: 'опубликована',
+      draft: 'черновик',
+      role: 'Роль: администратор процессов',
+      tools: 'Палитра элементов',
+    },
+    incidents: {
+      failed: 'Задача упала',
+      queue: 'Очередь в БД',
+      scheduler: 'Планировщик на ShedLock',
+      known: 'Ошибка по шаблону?',
+      retry: 'Повтор',
+      limit: 'лимит повторов',
+      admin: 'Инцидент администратору',
+      yes: 'да',
+      no: 'нет',
+    },
+    pipeline: {
+      steps: ['Описание услуги, .docx', 'LLM строит BPMN', 'Статический анализ', 'LLM-аудит', 'Отчёт для ревью'],
+    },
+    chart: {
+      title: 'Проектирование одного процесса, часов',
+      manual: 'Вручную',
+      automated: 'С пайплайном',
+      generation: 'генерация, ~10 мин',
+      refinement: 'доработка, ~2 ч',
+      hours: 'ч',
+      note: 'Рабочий день считаю за 8 часов: 1–2 дня это 8–16 часов.',
+      tableCaption: 'Время на проектирование одного процесса',
+      colStage: 'Способ',
+      colTime: 'Время',
+    },
+    integrations: {
+      core: 'Портал',
+      nodes: ['Kafka: уведомления', 'Push', 'Курьерская служба', 'Idea Platform', 'Redis: кеш', 'PostgreSQL: поиск'],
+    },
+  },
+  experience: {
+    title: 'Опыт',
+    lead: 'В коммерческой разработке с августа 2020 года, это {tenure}.',
+    work: 'Работа',
+    study: 'Учёба',
+    now: 'сейчас',
+    jobs: [
+      {
+        company: 'IT_One',
+        role: 'Java-разработчик (fullstack)',
+        period: 'ноябрь 2023 — сейчас',
+        project: 'Портал Service Desk крупного банка',
+        facts: [
+          { value: '190+', label: 'задач' },
+          { value: '770+', label: 'коммитов' },
+          { value: '~140', label: 'миграций Liquibase' },
+        ],
+        points: [
+          'Веду задачи от постановки до релиза: бэкенд на Spring Boot, фронт на Vue 2 и Vuex (конструктор динамических форм, админка, раздел инцидентов).',
+          'Сделал BPMN-редактор процессов и подсистему инцидентов Camunda, автоматизировал проектирование процессов с помощью LLM.',
+          'Интеграции через Kafka и REST, кеш в Redis, оптимизация поиска заявок, сборка в TeamCity и GitLab CI.',
+        ],
+        stack: 'Java 21, Spring Boot 3.5, Camunda 7, PostgreSQL, Liquibase, Kafka, Redis, Docker, Vue 2, bpmn-js, Dify, Python',
+      },
+      {
+        company: 'Astelit',
+        role: 'Инженер-программист (Java Backend)',
+        period: 'август 2020 — сентябрь 2023',
+        points: [
+          'Разработал бэкенд на Spring Boot для трёх проектов полного цикла: системы электронного документооборота, Telegram-бота и мобильного приложения магазина.',
+          'Участвовал в разделении монолита на микросервисы: уведомления, синхронизация с внешними системами, боты. Проектировал REST API между сервисами, интегрировал систему с 1С.',
+          'Сам выстроил CI/CD: сборка и тесты бэкенда и фронта, артефакты в Nexus, Docker-образы, docker-compose и Portainer.',
+          'Проектировал схемы PostgreSQL и оптимизировал запросы, вёл миграции в Liquibase, сделал авторизацию через LDAP, писал тесты на JUnit и Mockito.',
+        ],
+        stack: 'Java, Spring Boot, PostgreSQL, Liquibase, Redis, LDAP, Docker, Portainer, Nexus, JUnit, Mockito',
+      },
+    ],
+    degrees: [
+      { year: 2021, label: 'Бакалавр, ДонНУ' },
+      { year: 2024, label: 'Магистр, ИТМО' },
+    ],
+  },
+  stack: {
+    title: 'Стек',
+    lead: 'Слои системы, с которыми я работаю каждый день, от интерфейса до доставки.',
+    layers: [
+      { name: 'Интерфейс', items: ['Vue 2', 'Vuex', 'Element UI', 'bpmn-js', 'JavaScript'] },
+      { name: 'API и логика', items: ['Java 21', 'Spring Boot 3', 'Spring Data JPA', 'Hibernate', 'MapStruct', 'OpenAPI', 'LDAP'] },
+      { name: 'Процессы', items: ['Camunda 7', 'BPMN', 'Groovy', 'JUEL', 'таймеры', 'multi-instance', 'listeners'] },
+      { name: 'Интеграции', items: ['Kafka', 'REST', '1С', 'XML и XSD', 'JAXB'] },
+      { name: 'Данные', items: ['PostgreSQL', 'Liquibase', 'Redis', 'ShedLock'] },
+      { name: 'Сборка и доставка', items: ['Docker', 'TeamCity', 'GitLab CI', 'Nexus', 'Maven', 'Gradle'] },
+    ],
+    across: [
+      { name: 'Тесты', items: ['JUnit', 'Mockito', 'Spring Boot Test'] },
+      { name: 'AI и LLM', items: ['Dify', 'Python', 'Prompt engineering', 'Claude Code'] },
+      { name: 'Отчёты', items: ['JasperReports', 'Apache POI', 'DOCX'] },
+    ],
+  },
+  format: {
+    title: 'Формат работы',
+    terms: [
+      { label: 'Формат', value: 'Удалённо, полная занятость' },
+      { label: 'Оформление', value: 'B2B-контракт, готов открыть ИП в Грузии. Или через EOR.' },
+      { label: 'Где я', value: 'Тбилиси, UTC+4. Гражданство РФ.' },
+    ],
+    zones: {
+      title: 'Общие часы с командой',
+      note: 'Рабочий день с 9 до 18 по местному времени. Шкала по времени Тбилиси.',
+      cities: [
+        { name: 'Москва', tz: 'Europe/Moscow' },
+        { name: 'Лимассол', tz: 'Asia/Nicosia' },
+        { name: 'Берлин', tz: 'Europe/Berlin' },
+        { name: 'Лондон', tz: 'Europe/London' },
+      ],
+      self: 'Тбилиси, мой день',
+      overlap: '{h} ч общих',
+      nowIn: 'Сейчас в Тбилиси {time}',
+    },
+  },
+  education: {
+    title: 'Образование',
+    degrees: [
+      {
+        title: 'Магистр, программная инженерия (09.04.04), программа «Веб-технологии»',
+        place: 'Университет ИТМО, Санкт-Петербург. Диплом с апостилем.',
+        year: '2024',
+      },
+      {
+        title: 'Бакалавр, информатика и вычислительная техника (09.03.01)',
+        place: 'Донецкий национальный университет',
+        year: '2021',
+      },
+    ],
+    languagesTitle: 'Языки',
+    languages: [
+      { name: 'Русский', level: 'родной', cefr: 0 },
+      { name: 'Английский', level: 'B2, Upper-Intermediate', cefr: 4 },
+    ],
+  },
+  contacts: {
+    title: 'Связаться',
+    lead: 'Открыт к удалённой работе на полный день. Расскажите о задаче, и договоримся о созвоне.',
+    items: [
+      { id: 'telegram', label: 'Telegram', value: '@dyamanko', href: 'https://t.me/dyamanko' },
+      { id: 'whatsapp', label: 'WhatsApp', value: '+995 595 301 353', href: 'https://wa.me/995595301353', copyable: true },
+      { id: 'phone', label: 'Телефон', value: '+7 909 439-16-23', href: 'tel:+79094391623', copyable: true },
+      { id: 'email', label: 'Почта', value: 'iamankodmitrii@gmail.com', href: 'mailto:iamankodmitrii@gmail.com', copyable: true },
+      { id: 'email-alt', label: 'Почта', value: 'yamankodmitry@gmail.com', href: 'mailto:yamankodmitry@gmail.com', copyable: true },
+    ],
+    copy: 'Скопировать',
+    copied: 'Скопировано',
+    resumeTitle: 'Резюме в PDF',
+    resumeRu: 'На русском',
+    resumeEn: 'In English',
+  },
+  footer: {
+    built: 'Сайт собран на Vue 3 и Vite.',
+    source: 'Код на GitHub',
+    updated: 'Обновлено в октябре 2026',
+  },
+}
