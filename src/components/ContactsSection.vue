@@ -59,13 +59,13 @@ async function copy(contact: Contact) {
       <div class="resume">
         <p class="resume-title">{{ t.contacts.resumeTitle }}</p>
         <div class="resume-links">
-          <a class="resume-link" :href="`${base}resume/dmitrii-iamanko-ru.pdf`" download lang="ru">
-            <AppIcon name="download" />
-            {{ t.contacts.resumeRu }}
-          </a>
           <a class="resume-link" :href="`${base}resume/dmitrii-iamanko-en.pdf`" download lang="en">
             <AppIcon name="download" />
             {{ t.contacts.resumeEn }}
+          </a>
+          <a class="resume-link" :href="`${base}resume/dmitrii-iamanko-ru.pdf`" download lang="ru">
+            <AppIcon name="download" />
+            {{ t.contacts.resumeRu }}
           </a>
         </div>
       </div>

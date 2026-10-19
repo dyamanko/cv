@@ -3,7 +3,7 @@ import { useLang } from '../composables/useLang'
 import type { Lang } from '../content'
 
 const { lang, t, setLang } = useLang()
-const langs: Lang[] = ['ru', 'en']
+const langs: Lang[] = ['en', 'ru']
 </script>
 
 <template>

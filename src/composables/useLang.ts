@@ -16,15 +16,14 @@ function readStored(): string | null {
 }
 
 /**
- * ?lang=en wins, so a link sent to an international company opens in English.
- * Then the visitor's last choice, then the browser language.
+ * English opens first. ?lang=ru in a link wins, then the visitor's last choice.
  */
 function detect(): Lang {
   const fromUrl = new URLSearchParams(location.search).get('lang')
   if (isLang(fromUrl)) return fromUrl
   const stored = readStored()
   if (isLang(stored)) return stored
-  return /^(ru|uk|be|kk)\b/i.test(navigator.language) ? 'ru' : 'en'
+  return 'en'
 }
 
 const lang = ref<Lang>(detect())

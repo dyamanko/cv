@@ -25,7 +25,7 @@ watchEffect(() => {
       <p class="line">{{ t.hero.location }}. {{ t.format.terms[0].value }}. {{ t.format.terms[1].value }}</p>
       <p class="line contacts">
         <span v-for="c in t.contacts.items" :key="c.id">{{ c.label }}: {{ c.value }}</span>
-        <span>{{ t.resume.website }}: {{ SITE }}{{ lang === 'en' ? '/?lang=en' : '' }}</span>
+        <span>{{ t.resume.website }}: {{ SITE }}{{ lang === 'ru' ? '/?lang=ru' : '' }}</span>
       </p>
     </header>
 
