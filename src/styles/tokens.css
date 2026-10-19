@@ -1,0 +1,76 @@
+/*
+  Visual language: a process diagram on drafting paper.
+  Ink lines on a cool sheet, a highlighter marks the path a request has taken.
+*/
+:root {
+  color-scheme: light;
+
+  --paper: #f2f5f9;
+  --sheet: #ffffff;
+  --ink: #1a2540;
+  --ink-2: #48546d;
+  --ink-3: #7d879b;
+  --rule: #d9dfe8;
+  --dot: #c9d2df;
+
+  /* highlighter wash under the executed path */
+  --mark: #c3f07a;
+  /* the same green, dark enough to be a line or an icon on the sheet */
+  --mark-ink: #3b7d14;
+  --critical: #c83434;
+  --critical-wash: #fbe3e1;
+
+  --block: #1a2540;
+  --on-block: #f2f5f9;
+  --on-block-2: #b8c2d6;
+
+  --font-display: 'Unbounded Variable', 'Arial Black', sans-serif;
+  --font-text: 'Golos Text Variable', system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+
+  --radius-s: 6px;
+  --radius-m: 12px;
+
+  --page-max: 1160px;
+  --gutter: clamp(16px, 4vw, 40px);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    color-scheme: dark;
+    --paper: #0d1424;
+    --sheet: #131c30;
+    --ink: #e6ebf4;
+    --ink-2: #a8b3c7;
+    --ink-3: #6f7b92;
+    --rule: #26314a;
+    --dot: #2a3550;
+    --mark: #44661f;
+    --mark-ink: #9fdc5c;
+    --critical: #ef6b63;
+    --critical-wash: #3b1c22;
+    --block: #19233b;
+    --on-block: #e6ebf4;
+    --on-block-2: #a8b3c7;
+  }
+}
+
+:root[data-theme='dark'] {
+  color-scheme: dark;
+  --paper: #0d1424;
+  --sheet: #131c30;
+  --ink: #e6ebf4;
+  --ink-2: #a8b3c7;
+  --ink-3: #6f7b92;
+  --rule: #26314a;
+  --dot: #2a3550;
+  --mark: #44661f;
+  --mark-ink: #9fdc5c;
+  --critical: #ef6b63;
+  --critical-wash: #3b1c22;
+  --block: #19233b;
+  --on-block: #e6ebf4;
+  --on-block-2: #a8b3c7;
+}
