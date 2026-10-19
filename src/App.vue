@@ -1,5 +1,11 @@
+<script setup lang="ts">
+import HeroSection from './components/HeroSection.vue'
+import SiteHeader from './components/SiteHeader.vue'
+</script>
+
 <template>
+  <SiteHeader />
   <main>
-    <h1>Дмитрий Яманко</h1>
+    <HeroSection />
   </main>
 </template>
