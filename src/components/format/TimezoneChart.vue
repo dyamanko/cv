@@ -5,7 +5,7 @@ import { useLang } from '../../composables/useLang'
 const HOME = 'Asia/Tbilisi'
 const DAY = { start: 9, end: 18 }
 const AXIS = { from: 6, to: 24 }
-const ticks = [6, 9, 12, 15, 18, 21, 24]
+const ticks = [9, 12, 15, 18, 21]
 
 const { lang, t } = useLang()
 const now = ref(new Date())
@@ -68,11 +68,14 @@ onBeforeUnmount(() => clearInterval(timer))
     </figcaption>
 
     <ul class="legend" aria-hidden="true">
-      <li><span class="key own" />{{ t.format.zones.self }}</li>
+      <li><span class="key own" />{{ t.format.zones.selfLegend }}</li>
       <li><span class="key shared" />{{ t.format.zones.shared }}</li>
     </ul>
 
     <div class="plot">
+      <div class="grid" aria-hidden="true">
+        <span v-for="tick in ticks" :key="tick" :style="{ left: pct(tick) }" />
+      </div>
       <div v-if="homeHour >= AXIS.from && homeHour <= AXIS.to" class="track-area" aria-hidden="true">
         <span class="now" :style="{ left: pct(homeHour) }" />
       </div>
@@ -239,12 +242,22 @@ onBeforeUnmount(() => clearInterval(timer))
   transform: translateX(-50%);
 }
 
-.axis span:first-child {
-  transform: none;
+
+.grid {
+  display: none;
+  position: absolute;
+  top: -6px;
+  bottom: 24px;
+  left: var(--name-w);
+  right: var(--value-w);
 }
 
-.axis span:last-child {
-  transform: translateX(-100%);
+.grid span {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: var(--rule);
 }
 
 .track-area {
@@ -297,7 +310,24 @@ onBeforeUnmount(() => clearInterval(timer))
     padding-left: 12px;
   }
 
-  .track-area {
+  .grid {
+  display: none;
+  position: absolute;
+  top: -6px;
+  bottom: 24px;
+  left: var(--name-w);
+  right: var(--value-w);
+}
+
+.grid span {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: var(--rule);
+}
+
+.track-area {
     display: block;
   }
 }

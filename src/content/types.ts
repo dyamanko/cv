@@ -120,6 +120,7 @@ export interface Content {
       note: string
       cities: { name: string; tz: string }[]
       self: string
+      selfLegend: string
       shared: string
       overlap: string
       nowIn: string
