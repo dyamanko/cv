@@ -2,6 +2,7 @@
 import { computed } from 'vue'
 import { useLang } from '../composables/useLang'
 import AppIcon from './AppIcon.vue'
+import ProcessDiagram from './process/ProcessDiagram.vue'
 
 const { lang, t } = useLang()
 const resumeHref = computed(() => `${import.meta.env.BASE_URL}resume/dmitrii-iamanko-${lang.value}.pdf`)
@@ -39,6 +40,8 @@ const resumeHref = computed(() => `${import.meta.env.BASE_URL}resume/dmitrii-iam
         </div>
       </div>
     </div>
+
+    <ProcessDiagram class="hero-process" />
   </section>
 </template>
 
@@ -150,6 +153,10 @@ const resumeHref = computed(() => `${import.meta.env.BASE_URL}resume/dmitrii-iam
   .button-primary:hover {
     background: color-mix(in srgb, var(--ink) 88%, var(--mark));
   }
+}
+
+.hero-process {
+  margin-top: clamp(40px, 6vw, 72px);
 }
 
 @media (min-width: 960px) {
