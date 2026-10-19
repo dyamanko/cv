@@ -90,13 +90,17 @@ export interface Content {
       automated: string
       generation: string
       refinement: string
-      hours: string
+      manualValue: string
+      automatedValue: string
+      generationValue: string
+      refinementValue: string
+      manualHint: string
       note: string
       tableCaption: string
       colStage: string
       colTime: string
     }
-    integrations: { core: string; nodes: string[] }
+    integrations: { core: string; coreNote: string; nodes: { name: string; note: string }[] }
   }
   experience: {
     title: string

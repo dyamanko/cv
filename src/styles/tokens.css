@@ -20,6 +20,12 @@
   --critical: #c83434;
   --critical-wash: #fbe3e1;
 
+  /* chart series, validated for CVD separation on the sheet */
+  --viz-1: #4f9a1f;
+  --viz-2: #2a6fd6;
+  --viz-base: #7d879b;
+  --viz-base-soft: #c9d0dc;
+
   --block: #1a2540;
   --on-block: #f2f5f9;
   --on-block-2: #b8c2d6;
@@ -51,6 +57,10 @@
     --mark-ink: #9fdc5c;
     --critical: #ef6b63;
     --critical-wash: #3b1c22;
+    --viz-1: #5fa52a;
+    --viz-2: #4a8ef0;
+    --viz-base: #6f7b92;
+    --viz-base-soft: #34405a;
     --block: #19233b;
     --on-block: #e6ebf4;
     --on-block-2: #a8b3c7;
@@ -70,6 +80,10 @@
   --mark-ink: #9fdc5c;
   --critical: #ef6b63;
   --critical-wash: #3b1c22;
+  --viz-1: #5fa52a;
+  --viz-2: #4a8ef0;
+  --viz-base: #6f7b92;
+  --viz-base-soft: #34405a;
   --block: #19233b;
   --on-block: #e6ebf4;
   --on-block-2: #a8b3c7;

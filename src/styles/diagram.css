@@ -1,0 +1,128 @@
+/* Shared BPMN-style shapes for the smaller figures in the case studies. */
+
+.sheet {
+  border: 1px solid var(--rule);
+  border-radius: 16px;
+  background-color: var(--sheet);
+  background-image: radial-gradient(var(--dot) 1px, transparent 1.2px);
+  background-size: 22px 22px;
+  background-position: 11px 11px;
+}
+
+.dg {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+  font-family: var(--font-text);
+}
+
+.dg-flow {
+  fill: none;
+  stroke: var(--ink);
+  stroke-width: 1.6;
+}
+
+.dg-flow-soft {
+  fill: none;
+  stroke: var(--ink-3);
+  stroke-width: 1.4;
+}
+
+.dg-arrow {
+  fill: var(--ink);
+}
+
+.dg-task {
+  fill: var(--sheet);
+  stroke: var(--ink);
+  stroke-width: 1.6;
+}
+
+.dg-task-done {
+  fill: color-mix(in srgb, var(--mark) 55%, var(--sheet));
+}
+
+.dg-task-active {
+  fill: color-mix(in srgb, var(--mark) 22%, var(--sheet));
+  stroke-width: 3;
+}
+
+.dg-task-incident {
+  fill: var(--critical-wash);
+  stroke: var(--critical);
+  stroke-width: 2.4;
+}
+
+.dg-event {
+  fill: var(--sheet);
+  stroke: var(--ink);
+  stroke-width: 1.6;
+}
+
+.dg-event-end {
+  stroke-width: 3.5;
+}
+
+.dg-wash {
+  fill: none;
+  stroke: var(--mark);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.dg-icon {
+  fill: none;
+  stroke: var(--ink-2);
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.dg-fo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  color: var(--ink);
+  text-align: center;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.2;
+  text-wrap: balance;
+}
+
+.dg-fo-note {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--ink-2);
+}
+
+.dg-fo-flow {
+  font-size: 13px;
+  font-weight: 500;
+  font-style: italic;
+  color: var(--ink-2);
+}
+
+.dg-fo-start {
+  justify-content: flex-start;
+  text-align: left;
+}
+
+.dg-fo-end {
+  justify-content: flex-end;
+  text-align: right;
+}
+
+.dg-text {
+  fill: var(--ink);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.dg-text-muted {
+  fill: var(--ink-2);
+  font-size: 13px;
+  font-weight: 500;
+}
