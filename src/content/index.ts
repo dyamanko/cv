@@ -28,7 +28,8 @@ export function formatTenure(lang: Lang, from: Date, to: Date = new Date()): str
   const months = total % 12
   const rules = new Intl.PluralRules(lang)
   const u = units[lang]
-  const y = `${years} ${u.year[rules.select(years)] ?? u.year.other}`
+  // non-breaking spaces keep a number on the same line as its unit
+  const y = `${years}\u00a0${u.year[rules.select(years)] ?? u.year.other}`
   if (months === 0) return y
-  return `${y} ${u.and} ${months} ${u.month[rules.select(months)] ?? u.month.other}`
+  return `${y} ${u.and} ${months}\u00a0${u.month[rules.select(months)] ?? u.month.other}`
 }

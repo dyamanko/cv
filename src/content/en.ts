@@ -4,7 +4,7 @@ export const en: Content = {
   meta: {
     title: 'Dmitrii Iamanko, Senior Java Backend Developer',
     description:
-      'Java backend developer working with Spring Boot and Camunda. 6+ years of commercial experience, three years on the Service Desk portal of a large bank. Open to remote roles.',
+      'Java backend developer working with Spring Boot and Camunda. 6+ years of commercial experience, three years on the Service Desk portal of a large bank. Open to remote roles.',
   },
   nav: {
     label: 'Sections',
@@ -15,6 +15,7 @@ export const en: Content = {
     contacts: 'Contact',
   },
   langSwitch: 'Site language',
+  skip: 'Skip to content',
   hero: {
     name: ['Dmitrii', 'Iamanko'],
     role: 'Senior Java Backend Developer',
@@ -28,7 +29,7 @@ export const en: Content = {
   process: {
     label: 'BPMN diagram: how a request moves through the portal from creation to completion',
     caption:
-      'This is how a request moves through a process in the portal. I built the executed-path highlighting and the automatic retry of failed jobs.',
+      'A request in the portal follows this process. I built the executed-path highlighting and the automatic retry of failed jobs.',
     replay: 'Run again',
     start: 'Request created',
     approval: 'Approval',
@@ -64,7 +65,7 @@ export const en: Content = {
   cases: {
     title: 'What I built in the portal',
     intro:
-      'The bank’s Service Desk: service catalog, requests with approval and fulfilment through BPM processes, incidents, reporting. A team of 20+ people, 5+ of them developers.',
+      'The bank’s Service Desk: service catalog, requests with approval and fulfilment through BPM processes, incidents, reporting. A team of 20+ people, 5+ of them developers.',
     items: [
       {
         id: 'editor',
@@ -116,14 +117,14 @@ export const en: Content = {
       title: 'Designing one process, hours',
       manual: 'By hand',
       automated: 'With the pipeline',
-      generation: 'generation, ~10 min',
-      refinement: 'refinement, ~2 h',
-      manualValue: '8–16 h',
-      automatedValue: '~2 h 10 min',
-      generationValue: '~10 min',
-      refinementValue: '~2 h',
+      generation: 'generation, ~10 min',
+      refinement: 'refinement, ~2 h',
+      manualValue: '8–16 h',
+      automatedValue: '~2 h 10 min',
+      generationValue: '~10 min',
+      refinementValue: '~2 h',
       manualHint: '1–2 working days',
-      note: 'A working day counts as 8 hours, so 1–2 days is 8–16 hours.',
+      note: 'A working day counts as 8 hours, so 1–2 days is 8–16 hours.',
       tableCaption: 'Time to design one process',
       colStage: 'Approach',
       colTime: 'Time',
@@ -151,7 +152,7 @@ export const en: Content = {
       {
         company: 'IT_One',
         role: 'Java Developer (full-stack)',
-        period: 'Nov 2023 — present',
+        period: 'Nov 2023 – present',
         project: 'Service Desk portal of a large bank',
         facts: [
           { value: '190+', label: 'tasks' },
@@ -168,7 +169,7 @@ export const en: Content = {
       {
         company: 'Astelit',
         role: 'Software Engineer (Java Backend)',
-        period: 'Aug 2020 — Sep 2023',
+        period: 'Aug 2020 – Sep 2023',
         points: [
           'Built Spring Boot backends for three projects across the full lifecycle: an electronic document management system, a Telegram bot and a retail mobile app.',
           'Took part in splitting a monolith into microservices: notifications, data sync with external systems, bots. Designed REST APIs between services and integrated with 1C.',

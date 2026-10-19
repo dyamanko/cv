@@ -19,7 +19,7 @@ const lead = computed(() => t.value.experience.lead.replace('{tenure}', formatTe
 
     <article v-for="job in t.experience.jobs" :key="job.company" class="job">
       <header class="job-meta">
-        <h3>{{ job.company }}</h3>
+        <h3 translate="no">{{ job.company }}</h3>
         <p class="job-role">{{ job.role }}</p>
         <p class="job-period">{{ job.period }}</p>
       </header>
@@ -38,7 +38,7 @@ const lead = computed(() => t.value.experience.lead.replace('{tenure}', formatTe
           <li v-for="point in job.points" :key="point">{{ point }}</li>
         </ul>
 
-        <p class="job-stack">{{ job.stack }}</p>
+        <p class="job-stack" translate="no">{{ job.stack }}</p>
       </div>
     </article>
   </section>

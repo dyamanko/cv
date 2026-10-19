@@ -7,11 +7,15 @@ import FormatSection from './components/format/FormatSection.vue'
 import HeroSection from './components/HeroSection.vue'
 import SiteHeader from './components/SiteHeader.vue'
 import StackSection from './components/StackSection.vue'
+import { useLang } from './composables/useLang'
+
+const { t } = useLang()
 </script>
 
 <template>
+  <a class="skip-link" href="#main">{{ t.skip }}</a>
   <SiteHeader />
-  <main>
+  <main id="main" tabindex="-1">
     <HeroSection />
     <CasesSection />
     <ExperienceSection />

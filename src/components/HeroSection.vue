@@ -10,7 +10,7 @@ const resumeHref = computed(() => `${import.meta.env.BASE_URL}resume/dmitrii-iam
 
 <template>
   <section class="hero page" aria-labelledby="hero-name">
-    <h1 id="hero-name" class="name">
+    <h1 id="hero-name" class="name" translate="no">
       <span>{{ t.hero.name[0] }}</span>
       <span>{{ t.hero.name[1] }}</span>
     </h1>

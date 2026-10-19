@@ -40,6 +40,7 @@ export interface Content {
   meta: { title: string; description: string }
   nav: { label: string; cases: string; experience: string; stack: string; format: string; contacts: string }
   langSwitch: string
+  skip: string
   hero: {
     name: [string, string]
     role: string

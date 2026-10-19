@@ -40,7 +40,7 @@ async function copy(contact: Contact) {
           >
             <AppIcon :name="contact.id" :size="20" />
             <span class="label">{{ contact.label }}</span>
-            <span class="value">{{ contact.value }}</span>
+            <span class="value" translate="no">{{ contact.value }}</span>
           </a>
           <button
             v-if="contact.copyable"

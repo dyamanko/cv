@@ -18,7 +18,7 @@ const FOCUS = 2
       <ol class="layers">
         <li v-for="(layer, i) in t.stack.layers" :key="layer.name" class="layer" :class="{ focus: i === FOCUS }">
           <h3 class="layer-name">{{ layer.name }}</h3>
-          <ul class="items">
+          <ul class="items" translate="no">
             <li v-for="item in layer.items" :key="item">{{ item }}</li>
           </ul>
         </li>
@@ -28,7 +28,7 @@ const FOCUS = 2
         <p class="across-title">{{ t.stack.acrossTitle }}</p>
         <section v-for="group in t.stack.across" :key="group.name" class="group">
           <h3 class="layer-name">{{ group.name }}</h3>
-          <ul class="items">
+          <ul class="items" translate="no">
             <li v-for="item in group.items" :key="item">{{ item }}</li>
           </ul>
         </section>

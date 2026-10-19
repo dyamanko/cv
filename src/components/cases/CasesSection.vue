@@ -20,7 +20,7 @@ const { t } = useLang()
       <div class="case-text">
         <h3>{{ item.title }}</h3>
         <p>{{ item.text }}</p>
-        <ul class="tags">
+        <ul class="tags" translate="no">
           <li v-for="tag in item.tags" :key="tag">{{ tag }}</li>
         </ul>
       </div>
