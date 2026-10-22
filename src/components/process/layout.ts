@@ -58,7 +58,7 @@ const horizontal: ProcessLayout = {
   },
   flows: ['M76 140H134', 'M292 140H342', 'M400 140H466', 'M644 140H706', 'M864 140H922'],
   noFlow: 'M372 168V242',
-  callout: { x: 456, y: 30, w: 200, h: 40 },
+  callout: { x: 386, y: 28, w: 340, h: 42 },
   calloutPointer: 'M556 70V98',
   route: [
     [56, 140],
@@ -86,7 +86,7 @@ const vertical: ProcessLayout = {
   },
   flows: ['M130 54V82', 'M130 158V196', 'M130 254V306', 'M130 382V468', 'M130 544V588'],
   noFlow: 'M158 226H290V260',
-  callout: { x: 146, y: 398, w: 206, h: 40 },
+  callout: { x: 146, y: 396, w: 210, h: 56 },
   calloutPointer: 'M178 398V384',
   route: [
     [130, 36],
