@@ -7,7 +7,6 @@
     "dev": "vite",
     "build": "vue-tsc -b && vite build",
     "preview": "vite preview",
-    "pdf": "node scripts/pdf.mjs",
     "og": "node scripts/og.mjs"
   },
   "dependencies": {
@@ -16,7 +15,6 @@
     "vue": "^3.5.44"
   },
   "devDependencies": {
-    "@types/node": "^22.20.5",
     "@vitejs/plugin-vue": "^6.0.10",
     "@vue/tsconfig": "^0.9.1",
     "typescript": "~5.9.3",
