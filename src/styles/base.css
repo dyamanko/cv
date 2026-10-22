@@ -8,7 +8,7 @@ html {
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: transparent;
   scroll-behavior: smooth;
-  scroll-padding-top: 24px;
+  scroll-padding-top: 72px;
 }
 
 @media (prefers-reduced-motion: reduce) {

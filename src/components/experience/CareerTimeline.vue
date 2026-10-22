@@ -2,6 +2,9 @@
 import { computed } from 'vue'
 import { useLang } from '../../composables/useLang'
 
+const props = defineProps<{ selected: string }>()
+const emit = defineEmits<{ select: [company: string] }>()
+
 const { t } = useLang()
 
 const FROM = 2020
@@ -19,29 +22,36 @@ const jobs = [
   { name: 'IT_One', from: at(2023, 10), to: nowAt, current: true },
 ]
 
+const periodOf = (company: string) => t.value.experience.jobs.find((j) => j.company === company)?.period ?? ''
+
 // the graduation month is unknown, so both degrees sit mid-year
 const degrees = computed(() => t.value.experience.degrees.map((d) => ({ ...d, pos: at(d.year, 6) })))
 </script>
 
 <template>
-  <div class="timeline" aria-hidden="true">
+  <div class="timeline">
     <div class="plot">
       <div class="lane">
-        <span class="lane-name">{{ t.experience.work }}</span>
+        <span class="lane-name" aria-hidden="true">{{ t.experience.work }}</span>
         <div class="track">
-          <span
+          <button
             v-for="job in jobs"
             :key="job.name"
+            type="button"
             class="job"
             :class="{ current: job.current }"
             :style="{ left: `${job.from}%`, width: `${job.to - job.from}%` }"
+            :aria-pressed="props.selected === job.name"
+            :aria-label="`${job.name}, ${periodOf(job.name)}`"
+            translate="no"
+            @click="emit('select', job.name)"
           >
             {{ job.name }}
-          </span>
+          </button>
         </div>
       </div>
 
-      <div class="lane">
+      <div class="lane" aria-hidden="true">
         <span class="lane-name">{{ t.experience.study }}</span>
         <div class="track track-study">
           <span v-for="d in degrees" :key="d.year" class="degree" :style="{ left: `${d.pos}%` }">
@@ -51,12 +61,12 @@ const degrees = computed(() => t.value.experience.degrees.map((d) => ({ ...d, po
         </div>
       </div>
 
-      <span class="now" :style="{ left: `${nowAt}%` }">
+      <span class="now" :style="{ left: `${nowAt}%` }" aria-hidden="true">
         <span class="now-label">{{ t.experience.now }}</span>
       </span>
     </div>
 
-    <div class="axis">
+    <div class="axis" aria-hidden="true">
       <span v-for="y in years" :key="y" class="year" :style="{ left: `${at(y)}%` }">{{ y }}</span>
     </div>
   </div>
@@ -103,10 +113,26 @@ const degrees = computed(() => t.value.experience.degrees.map((d) => ({ ...d, po
   border: 1.6px solid var(--ink);
   border-radius: 10px;
   background: color-mix(in srgb, var(--mark) 55%, var(--sheet));
+  color: var(--ink);
+  font: inherit;
   font-size: 14px;
   font-weight: 640;
   white-space: nowrap;
   overflow: hidden;
+  cursor: pointer;
+  transition:
+    box-shadow 160ms ease,
+    transform 120ms var(--ease-out);
+}
+
+.job[aria-pressed='true'] {
+  box-shadow:
+    0 0 0 2px var(--sheet),
+    0 0 0 4px var(--viz-2);
+}
+
+.job:active {
+  transform: scale(0.98);
 }
 
 /* still running: thick border, open right end */

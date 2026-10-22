@@ -9,10 +9,9 @@ const langs: Lang[] = ['en', 'ru']
 <template>
   <header class="site-header page">
     <nav :aria-label="t.nav.label" class="nav">
-      <a href="#portal">{{ t.nav.cases }}</a>
-      <a href="#experience">{{ t.nav.experience }}</a>
       <a href="#stack">{{ t.nav.stack }}</a>
-      <a href="#format">{{ t.nav.format }}</a>
+      <a href="#cases">{{ t.nav.cases }}</a>
+      <a href="#experience">{{ t.nav.experience }}</a>
       <a href="#contacts">{{ t.nav.contacts }}</a>
     </nav>
 
@@ -38,7 +37,13 @@ const langs: Lang[] = ['en', 'ru']
   align-items: center;
   justify-content: space-between;
   gap: 24px;
-  padding-block: 20px;
+  padding-block: 12px;
+}
+
+@media (min-width: 760px) {
+  .site-header {
+    padding-block: 20px;
+  }
 }
 
 .nav {

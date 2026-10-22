@@ -2,7 +2,6 @@
 import { useLang } from '../composables/useLang'
 
 const { t } = useLang()
-const CEFR = ['A1', 'A2', 'B1', 'B2', 'C1', 'C2']
 </script>
 
 <template>
@@ -28,9 +27,6 @@ const CEFR = ['A1', 'A2', 'B1', 'B2', 'C1', 'C2']
             <span class="language-name">{{ language.name }}</span>
             <span class="language-level">{{ language.level }}</span>
           </p>
-          <ol v-if="language.cefr" class="cefr" aria-hidden="true">
-            <li v-for="(level, i) in CEFR" :key="level" :class="{ reached: i < language.cefr }">{{ level }}</li>
-          </ol>
         </li>
       </ul>
     </div>
@@ -41,8 +37,8 @@ const CEFR = ['A1', 'A2', 'B1', 'B2', 'C1', 'C2']
 .education {
   display: grid;
   gap: 56px;
-  padding-top: clamp(80px, 12vw, 160px);
-  padding-bottom: clamp(80px, 12vw, 160px);
+  padding-top: clamp(56px, 9vw, 120px);
+  padding-bottom: clamp(56px, 9vw, 120px);
 }
 
 .education h2 {
@@ -104,34 +100,6 @@ const CEFR = ['A1', 'A2', 'B1', 'B2', 'C1', 'C2']
 
 .language-level {
   color: var(--ink-2);
-}
-
-.cefr {
-  display: grid;
-  grid-template-columns: repeat(6, minmax(0, 1fr));
-  gap: 2px;
-}
-
-.cefr li {
-  padding-top: 8px;
-  border-top: 8px solid var(--rule);
-  font-size: 12px;
-  color: var(--ink-2);
-  text-align: center;
-}
-
-.cefr li:first-child {
-  border-top-left-radius: 4px;
-}
-
-.cefr li:last-child {
-  border-top-right-radius: 4px;
-}
-
-.cefr li.reached {
-  border-top-color: var(--ink);
-  color: var(--ink);
-  font-weight: 640;
 }
 
 @media (min-width: 960px) {
