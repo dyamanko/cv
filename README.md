@@ -1,15 +1,16 @@
-# Dmitrii Iamanko, Senior Java Backend Developer
+# Dmitrii Iamanko, Senior Java Developer (Backend)
 
-Personal resume site: [dyamanko.github.io/cv](https://dyamanko.github.io/cv/) (English) and [the Russian version](https://dyamanko.github.io/cv/?lang=ru).
+Personal resume site: [dyamanko.github.io/cv](https://dyamanko.github.io/cv/) (English) and [the Russian version](https://dyamanko.github.io/cv/ru/).
 
-The page is built around BPMN, the notation I work with every day. The hero shows a request running through a Camunda-style process: approvers sign off, an external call fails with an incident, the automatic retry picks it up. Case studies, the career timeline and the stack use the same visual language.
+The first screen answers the recruiter's questions in order: role, experience, format, core stack, contacts and the PDF. Below it come the stack, four case studies, experience and education. The case studies are drawn in BPMN, the notation I work with every day, and each has one interactive diagram: failure scenarios for the retry mechanism, integration flows, diagram versions and roles, a monolith split into services.
 
 ## Stack
 
 - Vue 3, TypeScript, Vite
 - Hand-written CSS with design tokens, light and dark themes
-- Inline SVG diagrams, animated with the Web Animations API
-- Unbounded and Golos Text, self-hosted through Fontsource
+- Inline SVG diagrams animated with the Web Animations API and CSS
+- Technology logos from Simple Icons and Devicon, stored in `src/assets/icons`
+- Static HTML rendered at build time with `vue/server-renderer`, so the text is there without JavaScript
 
 ## Run locally
 
@@ -20,16 +21,13 @@ npm run dev
 
 ## Content
 
-All texts live in `src/content/en.ts` and `src/content/ru.ts`. The site, the printable resume and the PDFs are rendered from them.
+All texts live in `src/content/en.ts` and `src/content/ru.ts`; the stack grid reads `src/content/stack.ts`. The resume PDFs in `public/cv/` are the resume files themselves, not generated.
 
-After changing the content, regenerate the PDFs and the link preview against the running dev server:
+The link preview `public/og.png` is rendered from `og.html` against the running dev server:
 
 ```bash
-npm run pdf -- http://localhost:5173
 npm run og -- http://localhost:5173
 ```
-
-Both scripts use the local Google Chrome in headless mode.
 
 ## Deploy
 

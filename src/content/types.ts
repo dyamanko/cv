@@ -1,7 +1,10 @@
+import type { Scenario } from '../components/process/timeline'
+import type { GroupId, LensId } from './stack'
+
 export type Lang = 'ru' | 'en'
 
 export interface Contact {
-  id: 'telegram' | 'whatsapp' | 'phone' | 'email' | 'email-alt'
+  id: 'telegram' | 'whatsapp' | 'email' | 'linkedin' | 'phone'
   label: string
   value: string
   href: string
@@ -10,14 +13,21 @@ export interface Contact {
 }
 
 export interface Fact {
-  value: string
   label: string
+  value: string
 }
 
+export type CaseId = 'recovery' | 'events' | 'editor' | 'services'
+
 export interface CaseItem {
-  id: 'editor' | 'incidents' | 'pipeline' | 'integrations'
+  id: CaseId
   title: string
-  text: string
+  /** company and context in a few words */
+  where: string
+  lenses: LensId[]
+  task: string
+  did: string[]
+  result: string
   tags: string[]
 }
 
@@ -25,35 +35,86 @@ export interface Job {
   company: string
   role: string
   period: string
-  project?: string
-  facts?: Fact[]
+  domain: string
   points: string[]
   stack: string
 }
 
-export interface StackLayer {
-  name: string
-  items: string[]
-}
-
 export interface Content {
   meta: { title: string; description: string }
-  nav: { label: string; cases: string; experience: string; stack: string; format: string; contacts: string }
+  nav: { label: string; stack: string; cases: string; experience: string; contacts: string }
   langSwitch: string
   skip: string
   hero: {
     name: [string, string]
     role: string
-    pitch: string
-    status: string
-    location: string
-    telegram: string
-    resume: string
+    summary: string
+    facts: Fact[]
+    keyStack: string
+    cv: string
+    cvRu: string
+    cvEn: string
+    moreContacts: string
+  }
+  stack: {
+    title: string
+    lead: string
+    lensLabel: string
+    lenses: Record<LensId, string>
+    groups: Record<GroupId, string>
+    keyLegend: string
+    lensLegend: string
+    practices: string
+    architecture: { label: string; text: string }
+    learning: { label: string; text: string }
+  }
+  cases: {
+    title: string
+    lead: string
+    labels: { task: string; did: string; result: string; forRole: string; order: string; change: string }
+    items: CaseItem[]
+    recovery: { scenarioLabel: string; scenarios: Record<Scenario, string>; caption: string; mechanism: string }
+    events: {
+      flowLabel: string
+      flows: { id: 'notify' | 'courier' | 'search' | 'idea'; label: string; caption: string }[]
+      core: string
+      nodes: Record<'kafka' | 'push' | 'courier' | 'idea' | 'redis' | 'postgres', { name: string; note: string }>
+    }
+    editor: {
+      versionLabel: string
+      roleLabel: string
+      roles: { edit: string; view: string }
+      versions: string
+      published: string
+      draft: string
+      publish: string
+      readOnly: string
+      caption: string
+    }
+    services: {
+      viewLabel: string
+      views: { before: string; after: string }
+      monolith: string
+      modules: string[]
+      oneC: string
+      ci: string
+      caption: string
+    }
+    incidents: {
+      failed: string
+      queue: string
+      scheduler: string
+      known: string
+      retry: string
+      limit: string
+      admin: string
+      yes: string
+      no: string
+    }
+    more: { title: string; items: { title: string; text: string; metric?: string }[] }
   }
   process: {
     label: string
-    caption: string
-    replay: string
     start: string
     approval: string
     gateway: string
@@ -66,42 +127,8 @@ export interface Content {
     incident: string
     retry: string
     resolved: string
-    steps: { title: string; text: string }[]
-  }
-  cases: {
-    title: string
-    intro: string
-    items: CaseItem[]
-    editor: { versions: string; published: string; draft: string; role: string; tools: string }
-    incidents: {
-      failed: string
-      queue: string
-      scheduler: string
-      known: string
-      retry: string
-      limit: string
-      admin: string
-      yes: string
-      no: string
-    }
-    pipeline: { steps: string[] }
-    chart: {
-      title: string
-      manual: string
-      automated: string
-      generation: string
-      refinement: string
-      manualValue: string
-      automatedValue: string
-      generationValue: string
-      refinementValue: string
-      manualHint: string
-      note: string
-      tableCaption: string
-      colStage: string
-      colTime: string
-    }
-    integrations: { core: string; coreNote: string; nodes: { name: string; note: string }[] }
+    escalated: string
+    limit: string
   }
   experience: {
     title: string
@@ -112,47 +139,21 @@ export interface Content {
     jobs: Job[]
     degrees: { year: number; label: string }[]
   }
-  stack: { title: string; lead: string; layers: StackLayer[]; acrossTitle: string; across: StackLayer[] }
-  format: {
-    title: string
-    terms: Fact[]
-    zones: {
-      title: string
-      note: string
-      cities: { name: string; tz: string }[]
-      self: string
-      selfLegend: string
-      shared: string
-      overlap: string
-      nowIn: string
-    }
-  }
   education: {
     title: string
     degrees: { title: string; place: string; year: string }[]
     languagesTitle: string
-    languages: { name: string; level: string; cefr: number }[]
+    languages: { name: string; level: string }[]
   }
   contacts: {
     title: string
     lead: string
     items: Contact[]
+    terms: Fact[]
     copy: string
     copied: string
-    resumeTitle: string
-    resumeRu: string
-    resumeEn: string
+    vcard: string
+    cvTitle: string
   }
-  footer: { built: string; source: string; updated: string }
-  resume: {
-    title: string
-    summary: string
-    skills: string
-    experience: string
-    achievements: string
-    education: string
-    languages: string
-    additional: string
-    website: string
-  }
+  footer: { updated: string }
 }
