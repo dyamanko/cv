@@ -13,10 +13,10 @@ export const en: Content = {
     name: ['Dmitrii', 'Iamanko'],
     role: 'Senior Java Developer (Backend)',
     summary:
-      'Backend for banking, document management and retail. For three years I have been building the internal service portal of a major bank, used by ~30,000 employees: Spring Boot, Camunda 7, PostgreSQL, Kafka. I own features from requirements to production, including frontend work in Vue.js.',
+      'Backend for banking, document management and retail. I spent three years building the internal service portal of a major bank, used by ~30,000 employees: Spring Boot, Camunda 7, PostgreSQL, Kafka. I own features from requirements to production, including frontend work in Vue.js.',
     facts: [
       { label: 'Experience', value: '6+ years of commercial Java development' },
-      { label: 'Now', value: 'Java Developer at IT_One' },
+      { label: 'Last role', value: 'Java Developer at IT_One, until Oct 2026' },
       { label: 'Format', value: 'Remote, full-time; experienced in remote work' },
       { label: 'Time zone', value: 'Tbilisi, UTC+4' },
       { label: 'Contract', value: 'B2B (Georgian IE) or EOR' },
@@ -87,7 +87,7 @@ export const en: Content = {
           'A failed-job queue in the database and a ShedLock scheduler',
           'Incident history and troubleshooting guides for admins',
         ],
-        result: '~25–30% of Camunda incidents are now resolved automatically, without manual intervention.',
+        result: '~25–30% of Camunda incidents were resolved automatically, without manual intervention.',
         tags: ['Camunda 7', 'ShedLock', 'PostgreSQL', 'Spring Boot'],
       },
       {
@@ -213,11 +213,11 @@ export const en: Content = {
       {
         company: 'IT_One',
         role: 'Java Developer',
-        period: 'Nov 2023 – present',
+        period: 'Nov 2023 – Oct 2026',
         domain: 'Internal service portal of a major bank, used by all of its ~30,000 employees for leave, payroll and other approvals; 500–2,000 new requests a day. A team of 20+ people, 5+ of them developers.',
         points: [
-          'I deliver features from requirements to production on the backend (Spring Boot) and the frontend (Vue 2, Vuex).',
-          'Designed and built the in-portal BPMN editor and the Camunda incident subsystem: ~25–30% of incidents now resolve automatically.',
+          'Delivered features from requirements to production on the backend (Spring Boot) and the frontend (Vue 2, Vuex).',
+          'Designed and built the in-portal BPMN editor and the Camunda incident subsystem: ~25–30% of incidents were resolved automatically.',
           'Built Kafka producers for event-driven notifications and integrations with external systems; sped up request search by 30%.',
           'Automated process design with LLMs (Dify).',
           'Code review experience in the team.',
