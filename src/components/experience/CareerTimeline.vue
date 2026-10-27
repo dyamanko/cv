@@ -19,7 +19,8 @@ const nowAt = Math.min(at(now.getFullYear(), now.getMonth() + now.getDate() / 31
 
 const jobs = [
   { name: 'Astelit', from: at(2020, 7), to: at(2023, 9), current: false },
-  { name: 'IT_One', from: at(2023, 10), to: nowAt, current: true },
+  // last day at IT_One: 26 Oct 2026
+  { name: 'IT_One', from: at(2023, 10), to: at(2026, 9 + 26 / 31), current: false },
 ]
 
 const periodOf = (company: string) => t.value.experience.jobs.find((j) => j.company === company)?.period ?? ''
