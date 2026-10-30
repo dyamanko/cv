@@ -2,7 +2,7 @@ import type { Content } from './types'
 
 export const ru: Content = {
   meta: {
-    title: 'Дмитрий Яманко, Senior Java Developer (Backend)',
+    title: 'Дмитрий Яманко, Java Backend Developer',
     description:
       'Java-бэкенд: Spring Boot, Camunda, PostgreSQL, Kafka. 6+ лет коммерческой разработки, три года на внутреннем портале крупного банка для ~30 000 сотрудников. Ищу удалённую работу.',
   },
@@ -11,7 +11,7 @@ export const ru: Content = {
   skip: 'Перейти к содержимому',
   hero: {
     name: ['Дмитрий', 'Яманко'],
-    role: 'Senior Java Developer (Backend)',
+    role: 'Java Backend Developer',
     summary:
       'Бэкенд для банкинга, документооборота и ритейла. Три года развивал внутренний портал заявок крупного банка, которым пользуются ~30 000 сотрудников: Spring Boot, Camunda 7, PostgreSQL, Kafka. Веду задачи от постановки до продакшена, включая фронтенд на Vue.js.',
     facts: [

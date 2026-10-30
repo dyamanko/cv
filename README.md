@@ -1,4 +1,4 @@
-# Dmitrii Iamanko, Senior Java Developer (Backend)
+# Dmitrii Iamanko, Java Backend Developer
 
 Personal resume site: [dyamanko.github.io/cv](https://dyamanko.github.io/cv/) (English) and [the Russian version](https://dyamanko.github.io/cv/ru/).
 
