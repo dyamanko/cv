@@ -2,7 +2,7 @@ import type { Content } from './types'
 
 export const en: Content = {
   meta: {
-    title: 'Dmitrii Iamanko, Senior Java Developer (Backend)',
+    title: 'Dmitrii Iamanko, Java Backend Developer',
     description:
       'Java backend: Spring Boot, Camunda, PostgreSQL, Kafka. 6+ years of commercial experience, three years on the internal portal of a major bank used by ~30,000 employees. Open to remote roles.',
   },
@@ -11,7 +11,7 @@ export const en: Content = {
   skip: 'Skip to content',
   hero: {
     name: ['Dmitrii', 'Iamanko'],
-    role: 'Senior Java Developer (Backend)',
+    role: 'Java Backend Developer',
     summary:
       'Backend for banking, document management and retail. I spent three years building the internal service portal of a major bank, used by ~30,000 employees: Spring Boot, Camunda 7, PostgreSQL, Kafka. I own features from requirements to production, including frontend work in Vue.js.',
     facts: [
