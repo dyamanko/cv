@@ -51,6 +51,7 @@ export const STACK: Tech[] = [
   { name: 'TeamCity', icon: 'teamcity', group: 'infra', lenses: ['backend', 'fullstack'] },
   { name: 'GitLab CI', icon: 'gitlab', group: 'infra', lenses: ['backend', 'fullstack'] },
   { name: 'Nexus', icon: 'sonatype', group: 'infra', lenses: ['backend'] },
+  { name: 'Grafana', group: 'infra', lenses: ['backend'] },
   { name: 'Maven', icon: 'apachemaven', group: 'infra', lenses: ['backend'] },
   { name: 'Git', icon: 'git', group: 'infra', lenses: ALL },
 
