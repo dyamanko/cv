@@ -4,3 +4,5 @@ Technology logos used in the stack grid.
 - `java.svg`: Devicon 2.17.0 (https://devicon.dev), MIT
 
 Fills and titles are stripped so the icons take `currentColor`; the visible label next to each icon is the accessible name. Logos are trademarks of their owners.
+
+Only pictorial marks get a tile. Wordmark logos (Groovy, Dify, XML) turn into a line of small text at tile size, so those items stay plain chips. `sonatype.svg` keeps the hexagon only: its viewBox is cropped above the wordmark.
